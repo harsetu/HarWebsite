@@ -1,0 +1,61 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3E1E0A"/>
+      <stop offset="100%" stop-color="#6B3A1B"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="80%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#D9A441" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#D9A441" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0C674"/>
+      <stop offset="100%" stop-color="#B9781F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg1)"/>
+  <rect width="1200" height="400" fill="url(#glow1)"/>
+
+  <!-- subtle dot grid -->
+  <g fill="#ffffff" opacity="0.06">
+    <circle cx="60" cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="180" cy="60" r="2"/>
+    <circle cx="60" cy="120" r="2"/><circle cx="120" cy="120" r="2"/><circle cx="180" cy="120" r="2"/>
+    <circle cx="60" cy="180" r="2"/><circle cx="120" cy="180" r="2"/><circle cx="180" cy="180" r="2"/>
+    <circle cx="60" cy="340" r="2"/><circle cx="120" cy="340" r="2"/><circle cx="180" cy="340" r="2"/>
+  </g>
+
+  <!-- network / globe icon cluster on the right -->
+  <g stroke="url(#nodeGrad)" stroke-width="1.5" opacity="0.9" fill="none">
+    <line x1="880" y1="140" x2="960" y2="90"/>
+    <line x1="880" y1="140" x2="850" y2="220"/>
+    <line x1="880" y1="140" x2="990" y2="180"/>
+    <line x1="960" y1="90" x2="1050" y2="130"/>
+    <line x1="960" y1="90" x2="990" y2="180"/>
+    <line x1="990" y1="180" x2="1050" y2="130"/>
+    <line x1="990" y1="180" x2="1010" y2="260"/>
+    <line x1="850" y1="220" x2="930" y2="280"/>
+    <line x1="930" y1="280" x2="1010" y2="260"/>
+    <line x1="1050" y1="130" x2="1110" y2="200"/>
+    <line x1="1010" y1="260" x2="1110" y2="200"/>
+  </g>
+  <g fill="url(#nodeGrad)">
+    <circle cx="880" cy="140" r="7"/>
+    <circle cx="960" cy="90" r="5"/>
+    <circle cx="990" cy="180" r="9"/>
+    <circle cx="1050" cy="130" r="6"/>
+    <circle cx="850" cy="220" r="5"/>
+    <circle cx="930" cy="280" r="6"/>
+    <circle cx="1010" cy="260" r="7"/>
+    <circle cx="1110" cy="200" r="5"/>
+  </g>
+
+  <!-- headline -->
+  <text x="70" y="175" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Your IT Solutions Provider</text>
+  <text x="70" y="222" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#E8C99A">Powering every part of your organization's technology</text>
+
+  <!-- tag pill -->
+  <rect x="70" y="255" width="230" height="46" rx="23" fill="#ffffff" fill-opacity="0.08" stroke="#D9A441" stroke-width="1.5"/>
+  <circle cx="98" cy="278" r="6" fill="#4ade80"/>
+  <text x="115" y="284" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#F7EFE3">End-to-end IT partner</text>
+</svg>
