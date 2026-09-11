@@ -4,6 +4,7 @@ class SiteContent {
 
   static const String companyName = 'HarSetu Tech';
   static const String tagline = 'Building digital bridges for growing businesses';
+  static const String heroTagline = 'Focus on Your Idea. For the Tech, We\'re Here.';
   static const String heroDescription =
       'HarSetu Tech is a startup software studio building app development, '
       'web development and digital SEO solutions for businesses — and the '

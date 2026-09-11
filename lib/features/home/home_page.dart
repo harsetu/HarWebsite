@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:core/constants/color_manager.dart';
 import 'package:core/widget/base_button.dart';
 import 'package:core/widget/base_screen.dart';
-import 'package:core/widget/base_svg_image.dart';
 import 'package:core/widget/base_text_view.dart';
 import 'package:core/widget/custom_page_indicator.dart';
 import 'package:flutter/material.dart';
@@ -39,117 +38,90 @@ class HomePage extends BaseStatelessWidget {
   }
 }
 
-/// Full-bleed, image-only hero pager (Nagarro-style) — no captions or
-/// buttons rendered on top; each slide carries its own message purely
-/// visually.
+/// Text-only hero — a single, punchy headline and supporting copy instead
+/// of an image/banner pager, styled with the brand's dark-brown/gold
+/// palette so it doesn't depend on banner artwork to feel premium.
 class _HeroSection extends StatelessWidget {
   const _HeroSection();
 
-  // Banners are authored at a 1200x400 (3:1) viewBox. Matching that aspect
-  // ratio almost exactly (rather than a fixed height per breakpoint, or too
-  // high a floor here) means BoxFit.cover has ~nothing to crop — a floor
-  // above ~width/3 forces cover to zoom in to fill the extra height, which
-  // crops the banner's edges (where the text/icons sit) on narrow phones.
-  static const double _bannerAspectRatio = 1200 / 400;
-
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
-    final height = (width / _bannerAspectRatio).clamp(100.0, 560.0);
-    return SizedBox(
+    final isCompact = MediaQuery.sizeOf(context).width < 720;
+    return Container(
       width: double.infinity,
-      height: height,
-      child: const _HeroImagePager(),
-    );
-  }
-}
-
-const List<String> _heroBanners = [
-  'assets/images/banner1.svg',
-  'assets/images/banner2.svg',
-  'assets/images/banner4.svg',
-  'assets/images/banner5.png',
-];
-
-/// Renders a hero banner asset as SVG or a raster image based on its file
-/// extension — banners are authored as either, interchangeably.
-Widget _heroBannerImage(String assetPath) {
-  if (assetPath.toLowerCase().endsWith('.svg')) {
-    return BaseSvgImage(assetPath: assetPath, fit: BoxFit.cover);
-  }
-  return Image.asset(assetPath, fit: BoxFit.cover);
-}
-
-/// Auto-advancing, swipeable pager of full-bleed hero slides with a dot
-/// indicator — mirrors [BaseImageCarousel]'s behaviour but over arbitrary
-/// slide widgets rather than only image assets.
-class _HeroImagePager extends StatefulWidget {
-  const _HeroImagePager();
-
-  @override
-  State<_HeroImagePager> createState() => _HeroImagePagerState();
-}
-
-class _HeroImagePagerState extends State<_HeroImagePager> {
-  late final PageController _pageController;
-  Timer? _timer;
-  int _currentIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-    _timer = Timer.periodic(const Duration(seconds: 4), (_) => _goToNextSlide());
-  }
-
-  void _goToNextSlide() {
-    if (!_pageController.hasClients) return;
-    final nextIndex = (_currentIndex + 1) % _heroBanners.length;
-    _pageController.animateToPage(
-      nextIndex,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
-    );
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        PageView.builder(
-          controller: _pageController,
-          itemCount: _heroBanners.length,
-          onPageChanged: (index) => setState(() => _currentIndex = index),
-          itemBuilder: (context, index) => ClipRect(
-            child: SizedBox.expand(
-              child: FittedBox(
-                fit: BoxFit.cover,
-                child: SizedBox(
-                  width: 1200,
-                  height: 400,
-                  child: _heroBannerImage(_heroBanners[index]),
-                ),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [ColorManager.colorPrimaryDark, ColorManager.colorBlack],
+        ),
+      ),
+      padding: EdgeInsets.symmetric(vertical: isCompact ? 64 : 100),
+      child: ResponsiveCenter(
+        maxWidth: 860,
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: ColorManager.primaryColor.withAlpha(30),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: ColorManager.primaryColor.withAlpha(90)),
+              ),
+              child: BaseTextView(
+                text: SiteContent.companyName.toUpperCase(),
+                isLocalizeText: false,
+                useAutoTranslation: false,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(color: ColorManager.primaryColor, letterSpacing: 1.2),
               ),
             ),
-          ),
+            const SizedBox(height: 24),
+            BaseTextView(
+              text: SiteContent.heroTagline,
+              isLocalizeText: false,
+              useAutoTranslation: false,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                    fontSize: isCompact ? 30 : 42,
+                    color: ColorManager.colorWhite,
+                    height: 1.2,
+                  ),
+            ),
+            const SizedBox(height: 20),
+            BaseTextView(
+              text: SiteContent.heroDescription,
+              isLocalizeText: false,
+              useAutoTranslation: false,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(200)),
+            ),
+            const SizedBox(height: 32),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 16,
+              runSpacing: 16,
+              children: [
+                BaseButton(
+                  buttonText: 'Get in Touch',
+                  bgColor: ColorManager.primaryColor,
+                  textColor: ColorManager.colorWhite,
+                  buttonHorizontalPadding: 28,
+                  onPressed: () => context.go(AppRoute.contact),
+                ),
+                BaseButton(
+                  buttonText: 'Explore Har Setu Connect',
+                  buttonTypeEnum: BaseButtonTypeEnum.buttonTypeOutline,
+                  borderColor: ColorManager.colorWhite,
+                  textColor: ColorManager.colorWhite,
+                  bgColor: Colors.transparent,
+                  buttonHorizontalPadding: 28,
+                  onPressed: () => context.go(AppRoute.ourProduct),
+                ),
+              ],
+            ),
+          ],
         ),
-        Positioned(
-          bottom: 20,
-          left: 0,
-          right: 0,
-          child: Center(
-            child: CustomPageIndicator(currentIndex: _currentIndex, count: _heroBanners.length),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

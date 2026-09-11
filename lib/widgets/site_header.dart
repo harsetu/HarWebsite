@@ -24,14 +24,14 @@ class SiteHeader extends StatelessWidget implements PreferredSizeWidget {
         bottom: false,
         child: ResponsiveCenter(
           child: SizedBox(
-            height: 72,
+            height: 100,
             child: Row(
               children: [
                 InkWell(
                   onTap: () => context.go(AppRoute.home),
                   child: Row(
                     children: [
-                      Image.asset('assets/images/logo.png', height: 40, fit: BoxFit.contain),
+                      Image.asset('assets/images/logo.png', height: 100, fit: BoxFit.contain),
                     ],
                   ),
                 ),
