@@ -11,7 +11,7 @@ class SiteContent {
       'technology behind our own in-house product, the Har Setu trust '
       'management system.';
 
-  static const String contactEmail = 'har.setu51@gmail.com';
+  static const String contactEmail = 'info@harsetu.in';
   static const String contactPhone = '+91 9053230525';
 
   static const String instagramUrl = 'https://www.instagram.com/har.setu51/';
