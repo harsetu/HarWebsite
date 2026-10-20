@@ -35,11 +35,13 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoute.privacyPolicy,
-      pageBuilder: (context, state) => _fadeTransitionPage(const PrivacyPolicyPage()),
+      pageBuilder: (context, state) =>
+          _fadeTransitionPage(const PrivacyPolicyPage()),
     ),
     GoRoute(
       path: AppRoute.termsConditions,
-      pageBuilder: (context, state) => _fadeTransitionPage(const TermsConditionsPage()),
+      pageBuilder: (context, state) =>
+          _fadeTransitionPage(const TermsConditionsPage()),
     ),
     GoRoute(
       path: AppRoute.contact,
@@ -48,7 +50,8 @@ final GoRouter appRouter = GoRouter(
     // Not linked from the main nav — reachable only via its direct URL.
     GoRoute(
       path: AppRoute.flutterInternship,
-      pageBuilder: (context, state) => _fadeTransitionPage(const FlutterInternshipPage()),
+      pageBuilder: (context, state) =>
+          _fadeTransitionPage(const FlutterInternshipPage()),
     ),
   ],
 );

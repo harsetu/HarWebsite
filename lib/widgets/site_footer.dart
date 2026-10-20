@@ -66,11 +66,20 @@ class SiteFooter extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _SocialIconButton(assetPath: 'assets/images/icon_instagram.svg', url: SiteContent.instagramUrl),
+            _SocialIconButton(
+              assetPath: 'assets/images/icon_instagram.svg',
+              url: SiteContent.instagramUrl,
+            ),
             const SizedBox(width: 12),
-            _SocialIconButton(assetPath: 'assets/images/icon_facebook.svg', url: SiteContent.facebookUrl),
+            _SocialIconButton(
+              assetPath: 'assets/images/icon_facebook.svg',
+              url: SiteContent.facebookUrl,
+            ),
             const SizedBox(width: 12),
-            _SocialIconButton(assetPath: 'assets/images/icon_linkedin.svg', url: SiteContent.linkedinUrl),
+            _SocialIconButton(
+              assetPath: 'assets/images/icon_linkedin.svg',
+              url: SiteContent.linkedinUrl,
+            ),
           ],
         ),
       ],
@@ -114,20 +123,34 @@ class SiteFooter extends StatelessWidget {
             const SizedBox(height: 32),
             Divider(color: ColorManager.colorWhite.withAlpha(40)),
             const SizedBox(height: 16),
-            _footerText(context, '© 2026 ${SiteContent.companyName}. All rights reserved.'),
+            _footerText(
+              context,
+              '© 2026 ${SiteContent.companyName}. All rights reserved.',
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _footerText(BuildContext context, String text, {bool isTitle = false}) {
+  Widget _footerText(
+    BuildContext context,
+    String text, {
+    bool isTitle = false,
+  }) {
     return BaseTextView(
       text: text,
       isLocalizeText: false,
       useAutoTranslation: false,
-      style: (isTitle ? Theme.of(context).textTheme.titleMedium : Theme.of(context).textTheme.bodyMedium)
-          ?.copyWith(color: isTitle ? ColorManager.colorWhite : ColorManager.colorWhite.withAlpha(200)),
+      style:
+          (isTitle
+                  ? Theme.of(context).textTheme.titleMedium
+                  : Theme.of(context).textTheme.bodyMedium)
+              ?.copyWith(
+                color: isTitle
+                    ? ColorManager.colorWhite
+                    : ColorManager.colorWhite.withAlpha(200),
+              ),
     );
   }
 
@@ -145,7 +168,8 @@ class _SocialIconButton extends StatelessWidget {
 
   const _SocialIconButton({required this.assetPath, required this.url});
 
-  Future<void> _open() => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+  Future<void> _open() =>
+      launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
 
   @override
   Widget build(BuildContext context) {

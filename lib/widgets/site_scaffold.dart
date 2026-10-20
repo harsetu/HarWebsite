@@ -19,10 +19,7 @@ class SiteScaffold extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            body,
-            const SiteFooter(),
-          ],
+          children: [body, const SiteFooter()],
         ),
       ),
     );

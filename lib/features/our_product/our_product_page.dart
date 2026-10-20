@@ -79,7 +79,10 @@ class _ProductHero extends StatelessWidget {
                 text: OurProductContent.heroEyebrow.toUpperCase(),
                 isLocalizeText: false,
                 useAutoTranslation: false,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(color: ColorManager.colorWhite, letterSpacing: 1.2),
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: ColorManager.colorWhite,
+                  letterSpacing: 1.2,
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -89,9 +92,9 @@ class _ProductHero extends StatelessWidget {
               useAutoTranslation: false,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    fontSize: isCompact ? 28 : 38,
-                    color: ColorManager.colorWhite,
-                  ),
+                fontSize: isCompact ? 28 : 38,
+                color: ColorManager.colorWhite,
+              ),
             ),
             const SizedBox(height: 20),
             BaseTextView(
@@ -99,7 +102,9 @@ class _ProductHero extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(210)),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: ColorManager.colorWhite.withAlpha(210),
+              ),
             ),
             const SizedBox(height: 16),
             BaseTextView(
@@ -107,7 +112,9 @@ class _ProductHero extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: ColorManager.colorWhite.withAlpha(240)),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: ColorManager.colorWhite.withAlpha(240),
+              ),
             ),
             const SizedBox(height: 32),
             Wrap(
@@ -177,7 +184,9 @@ class _WhatIsSection extends StatelessWidget {
                         isLocalizeText: false,
                         useAutoTranslation: false,
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: ColorManager.colorTextLight,
+                        ),
                       ),
                       const SizedBox(height: 12),
                     ],
@@ -200,12 +209,16 @@ class _WhatIsSection extends StatelessWidget {
               spacing: 12,
               runSpacing: 12,
               alignment: WrapAlignment.center,
-              children: OurProductContent.platformNeeds.asMap().entries.map((entry) {
+              children: OurProductContent.platformNeeds.asMap().entries.map((
+                entry,
+              ) {
                 final chipWidth = (width - 96 - (columns - 1) * 12) / columns;
                 return ScrollFadeIn(
                   delay: Duration(milliseconds: (entry.key % 6) * 60),
                   child: SizedBox(
-                    width: columns == 1 ? double.infinity : chipWidth.clamp(200, 340).toDouble(),
+                    width: columns == 1
+                        ? double.infinity
+                        : chipWidth.clamp(200, 340).toDouble(),
                     child: _PlatformNeedChip(text: entry.value),
                   ),
                 );
@@ -235,7 +248,11 @@ class _PlatformNeedChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.check_circle_outline, size: 18, color: ColorManager.primaryColor),
+          Icon(
+            Icons.check_circle_outline,
+            size: 18,
+            color: ColorManager.primaryColor,
+          ),
           const SizedBox(width: 10),
           Flexible(
             child: BaseTextView(
@@ -266,18 +283,28 @@ class _WhyHarSetuConnectSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const _SectionHeading(title: 'Why Har Setu Connect', subtitle: 'Built to make temple life simpler for everyone'),
+            const _SectionHeading(
+              title: 'Why Har Setu Connect',
+              subtitle: 'Built to make temple life simpler for everyone',
+            ),
             const SizedBox(height: 40),
             Wrap(
               spacing: 24,
               runSpacing: 24,
-              children: OurProductContent.whyReasons.asMap().entries.map((entry) {
+              children: OurProductContent.whyReasons.asMap().entries.map((
+                entry,
+              ) {
                 final cardWidth = (width - 96 - (columns - 1) * 24) / columns;
                 return SizedBox(
-                  width: columns == 1 ? double.infinity : cardWidth.clamp(260, 400).toDouble(),
+                  width: columns == 1
+                      ? double.infinity
+                      : cardWidth.clamp(260, 400).toDouble(),
                   child: ScrollFadeIn(
                     delay: Duration(milliseconds: entry.key * 80),
-                    child: _WhyReasonCard(index: entry.key + 1, reason: entry.value),
+                    child: _WhyReasonCard(
+                      index: entry.key + 1,
+                      reason: entry.value,
+                    ),
                   ),
                 );
               }).toList(),
@@ -312,7 +339,9 @@ class _WhyReasonCard extends StatelessWidget {
               text: index.toString().padLeft(2, '0'),
               isLocalizeText: false,
               useAutoTranslation: false,
-              style: Theme.of(context).textTheme.displaySmall?.copyWith(color: ColorManager.primaryColor.withAlpha(90)),
+              style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                color: ColorManager.primaryColor.withAlpha(90),
+              ),
             ),
             const SizedBox(height: 12),
             BaseTextView(
@@ -326,7 +355,9 @@ class _WhyReasonCard extends StatelessWidget {
               text: reason.description,
               isLocalizeText: false,
               useAutoTranslation: false,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: ColorManager.colorTextLight,
+              ),
             ),
           ],
         ),
@@ -387,7 +418,9 @@ class _FeatureGridSection extends StatelessWidget {
               children: OurProductContent.features.asMap().entries.map((entry) {
                 final cardWidth = (width - 96 - (columns - 1) * 24) / columns;
                 return SizedBox(
-                  width: columns == 1 ? double.infinity : cardWidth.clamp(260, 400).toDouble(),
+                  width: columns == 1
+                      ? double.infinity
+                      : cardWidth.clamp(260, 400).toDouble(),
                   child: ScrollFadeIn(
                     delay: Duration(milliseconds: (entry.key % 6) * 70),
                     child: _FeatureCard(feature: entry.value),
@@ -417,7 +450,11 @@ class _FeatureCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: ColorManager.dividerColour),
           boxShadow: [
-            BoxShadow(color: ColorManager.colorBlack.withAlpha(10), blurRadius: 16, offset: const Offset(0, 6)),
+            BoxShadow(
+              color: ColorManager.colorBlack.withAlpha(10),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            ),
           ],
         ),
         child: Column(
@@ -430,7 +467,11 @@ class _FeatureCard extends StatelessWidget {
                 color: ColorManager.primaryColor.withAlpha(30),
                 borderRadius: BorderRadius.circular(14),
               ),
-              child: Icon(_iconForFeature(feature.icon), color: ColorManager.primaryColor, size: 26),
+              child: Icon(
+                _iconForFeature(feature.icon),
+                color: ColorManager.primaryColor,
+                size: 26,
+              ),
             ),
             const SizedBox(height: 20),
             BaseTextView(
@@ -444,7 +485,9 @@ class _FeatureCard extends StatelessWidget {
               text: feature.description,
               isLocalizeText: false,
               useAutoTranslation: false,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: ColorManager.colorTextLight,
+              ),
             ),
           ],
         ),
@@ -466,7 +509,10 @@ class _HowItWorksSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const _SectionHeading(title: 'How Har Setu Connect Works', subtitle: 'A simple four-step journey'),
+            const _SectionHeading(
+              title: 'How Har Setu Connect Works',
+              subtitle: 'A simple four-step journey',
+            ),
             const SizedBox(height: 40),
             // See _MissionVisionSection in home_page.dart for why Expanded
             // can't be shared across both the horizontal and vertical layouts.
@@ -474,12 +520,20 @@ class _HowItWorksSection extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (int i = 0; i < OurProductContent.howItWorks.length; i++) ...[
+                  for (
+                    int i = 0;
+                    i < OurProductContent.howItWorks.length;
+                    i++
+                  ) ...[
                     ScrollFadeIn(
                       delay: Duration(milliseconds: i * 80),
-                      child: _ProcessStepCard(step: OurProductContent.howItWorks[i], index: i + 1),
+                      child: _ProcessStepCard(
+                        step: OurProductContent.howItWorks[i],
+                        index: i + 1,
+                      ),
                     ),
-                    if (i != OurProductContent.howItWorks.length - 1) const SizedBox(height: 24),
+                    if (i != OurProductContent.howItWorks.length - 1)
+                      const SizedBox(height: 24),
                   ],
                 ],
               )
@@ -487,14 +541,22 @@ class _HowItWorksSection extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (int i = 0; i < OurProductContent.howItWorks.length; i++) ...[
+                  for (
+                    int i = 0;
+                    i < OurProductContent.howItWorks.length;
+                    i++
+                  ) ...[
                     Expanded(
                       child: ScrollFadeIn(
                         delay: Duration(milliseconds: i * 80),
-                        child: _ProcessStepCard(step: OurProductContent.howItWorks[i], index: i + 1),
+                        child: _ProcessStepCard(
+                          step: OurProductContent.howItWorks[i],
+                          index: i + 1,
+                        ),
                       ),
                     ),
-                    if (i != OurProductContent.howItWorks.length - 1) const SizedBox(width: 16),
+                    if (i != OurProductContent.howItWorks.length - 1)
+                      const SizedBox(width: 16),
                   ],
                 ],
               ),
@@ -528,7 +590,9 @@ class _ProcessStepCard extends StatelessWidget {
             text: '$index',
             isLocalizeText: false,
             useAutoTranslation: false,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(color: ColorManager.colorWhite),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(color: ColorManager.colorWhite),
           ),
         ),
         const SizedBox(height: 16),
@@ -543,7 +607,9 @@ class _ProcessStepCard extends StatelessWidget {
           text: step.description,
           isLocalizeText: false,
           useAutoTranslation: false,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
+          style: Theme.of(
+            context,
+          ).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
         ),
       ],
     );
@@ -564,15 +630,23 @@ class _AudienceSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const _SectionHeading(title: 'Built For Temples & Trusts', subtitle: 'Designed to support every kind of religious organization'),
+            const _SectionHeading(
+              title: 'Built For Temples & Trusts',
+              subtitle:
+                  'Designed to support every kind of religious organization',
+            ),
             const SizedBox(height: 40),
             Wrap(
               spacing: 24,
               runSpacing: 24,
-              children: OurProductContent.audiences.asMap().entries.map((entry) {
+              children: OurProductContent.audiences.asMap().entries.map((
+                entry,
+              ) {
                 final cardWidth = (width - 96 - (columns - 1) * 24) / columns;
                 return SizedBox(
-                  width: columns == 1 ? double.infinity : cardWidth.clamp(220, 320).toDouble(),
+                  width: columns == 1
+                      ? double.infinity
+                      : cardWidth.clamp(220, 320).toDouble(),
                   child: ScrollFadeIn(
                     delay: Duration(milliseconds: entry.key * 80),
                     child: _AudienceCard(audience: entry.value),
@@ -616,7 +690,9 @@ class _AudienceCard extends StatelessWidget {
               text: audience.description,
               isLocalizeText: false,
               useAutoTranslation: false,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: ColorManager.colorTextLight,
+              ),
             ),
           ],
         ),
@@ -641,7 +717,10 @@ class _EcosystemSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const _SectionHeading(title: 'One Ecosystem. Multiple Experiences.', subtitle: ''),
+            const _SectionHeading(
+              title: 'One Ecosystem. Multiple Experiences.',
+              subtitle: '',
+            ),
             const SizedBox(height: 40),
             ScrollFadeIn(
               child: isCompact
@@ -652,7 +731,10 @@ class _EcosystemSection extends StatelessWidget {
                           if (i != nodes.length - 1)
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 8),
-                              child: Icon(Icons.arrow_downward, color: ColorManager.primaryColor),
+                              child: Icon(
+                                Icons.arrow_downward,
+                                color: ColorManager.primaryColor,
+                              ),
                             ),
                         ],
                       ],
@@ -664,8 +746,13 @@ class _EcosystemSection extends StatelessWidget {
                           Expanded(child: _EcosystemNode(label: nodes[i])),
                           if (i != nodes.length - 1)
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8),
-                              child: Icon(Icons.arrow_forward, color: ColorManager.primaryColor),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                              ),
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: ColorManager.primaryColor,
+                              ),
                             ),
                         ],
                       ],
@@ -679,7 +766,9 @@ class _EcosystemSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
             ),
           ],
@@ -737,7 +826,10 @@ class _TechnologySection extends StatelessWidget {
                     text: 'Technology Behind Har Setu'.toUpperCase(),
                     isLocalizeText: false,
                     useAutoTranslation: false,
-                    style: Theme.of(context).textTheme.labelLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(200), letterSpacing: 1.2),
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: ColorManager.colorWhite.withAlpha(200),
+                      letterSpacing: 1.2,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   BaseTextView(
@@ -745,7 +837,9 @@ class _TechnologySection extends StatelessWidget {
                     isLocalizeText: false,
                     useAutoTranslation: false,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.displaySmall?.copyWith(color: ColorManager.colorWhite),
+                    style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                      color: ColorManager.colorWhite,
+                    ),
                   ),
                   const SizedBox(height: 16),
                   ConstrainedBox(
@@ -755,7 +849,9 @@ class _TechnologySection extends StatelessWidget {
                       isLocalizeText: false,
                       useAutoTranslation: false,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(210)),
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: ColorManager.colorWhite.withAlpha(210),
+                      ),
                     ),
                   ),
                 ],
@@ -766,16 +862,23 @@ class _TechnologySection extends StatelessWidget {
               spacing: 16,
               runSpacing: 16,
               alignment: WrapAlignment.center,
-              children: OurProductContent.technologyCapabilities.asMap().entries.map((entry) {
-                final chipWidth = (width - 96 - (columns - 1) * 16) / columns;
-                return ScrollFadeIn(
-                  delay: Duration(milliseconds: (entry.key % 6) * 60),
-                  child: SizedBox(
-                    width: columns == 1 ? double.infinity : chipWidth.clamp(220, 340).toDouble(),
-                    child: _TechCapabilityChip(text: entry.value),
-                  ),
-                );
-              }).toList(),
+              children: OurProductContent.technologyCapabilities
+                  .asMap()
+                  .entries
+                  .map((entry) {
+                    final chipWidth =
+                        (width - 96 - (columns - 1) * 16) / columns;
+                    return ScrollFadeIn(
+                      delay: Duration(milliseconds: (entry.key % 6) * 60),
+                      child: SizedBox(
+                        width: columns == 1
+                            ? double.infinity
+                            : chipWidth.clamp(220, 340).toDouble(),
+                        child: _TechCapabilityChip(text: entry.value),
+                      ),
+                    );
+                  })
+                  .toList(),
             ),
           ],
         ),
@@ -808,7 +911,9 @@ class _TechCapabilityChip extends StatelessWidget {
               text: text,
               isLocalizeText: false,
               useAutoTranslation: false,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorWhite),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: ColorManager.colorWhite),
             ),
           ),
         ],
@@ -833,7 +938,10 @@ class _VisionSection extends StatelessWidget {
                 text: 'Our Vision'.toUpperCase(),
                 isLocalizeText: false,
                 useAutoTranslation: false,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(color: ColorManager.primaryColor, letterSpacing: 1.2),
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: ColorManager.primaryColor,
+                  letterSpacing: 1.2,
+                ),
               ),
               const SizedBox(height: 8),
               BaseTextView(
@@ -849,7 +957,9 @@ class _VisionSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
               const SizedBox(height: 4),
               BaseTextView(
@@ -857,7 +967,9 @@ class _VisionSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: ColorManager.primaryColor),
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: ColorManager.primaryColor,
+                ),
               ),
               const SizedBox(height: 16),
               BaseTextView(
@@ -865,7 +977,9 @@ class _VisionSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
             ],
           ),
@@ -904,7 +1018,10 @@ class _DifferenceSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const _SectionHeading(title: 'The Har Setu Difference', subtitle: 'Before and after digitizing temple operations'),
+            const _SectionHeading(
+              title: 'The Har Setu Difference',
+              subtitle: 'Before and after digitizing temple operations',
+            ),
             const SizedBox(height: 40),
             // See _MissionVisionSection in home_page.dart for why Expanded
             // can't be shared across both the horizontal and vertical layouts.
@@ -936,16 +1053,26 @@ class _DifferenceCard extends StatelessWidget {
   final List<String> items;
   final bool isHighlighted;
 
-  const _DifferenceCard({required this.title, required this.items, required this.isHighlighted});
+  const _DifferenceCard({
+    required this.title,
+    required this.items,
+    required this.isHighlighted,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(28),
       decoration: BoxDecoration(
-        color: isHighlighted ? ColorManager.primaryColor : ColorManager.colorWhite,
+        color: isHighlighted
+            ? ColorManager.primaryColor
+            : ColorManager.colorWhite,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: isHighlighted ? ColorManager.primaryColor : ColorManager.dividerColour),
+        border: Border.all(
+          color: isHighlighted
+              ? ColorManager.primaryColor
+              : ColorManager.dividerColour,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -954,7 +1081,9 @@ class _DifferenceCard extends StatelessWidget {
             text: title,
             isLocalizeText: false,
             useAutoTranslation: false,
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: isHighlighted ? ColorManager.colorWhite : null),
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              color: isHighlighted ? ColorManager.colorWhite : null,
+            ),
           ),
           const SizedBox(height: 20),
           for (final item in items)
@@ -964,9 +1093,13 @@ class _DifferenceCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    isHighlighted ? Icons.check_circle : Icons.remove_circle_outline,
+                    isHighlighted
+                        ? Icons.check_circle
+                        : Icons.remove_circle_outline,
                     size: 18,
-                    color: isHighlighted ? ColorManager.colorWhite : ColorManager.colorTextLight,
+                    color: isHighlighted
+                        ? ColorManager.colorWhite
+                        : ColorManager.colorTextLight,
                   ),
                   const SizedBox(width: 10),
                   Expanded(
@@ -975,8 +1108,10 @@ class _DifferenceCard extends StatelessWidget {
                       isLocalizeText: false,
                       useAutoTranslation: false,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: isHighlighted ? ColorManager.colorWhite.withAlpha(230) : ColorManager.colorTextLight,
-                          ),
+                        color: isHighlighted
+                            ? ColorManager.colorWhite.withAlpha(230)
+                            : ColorManager.colorTextLight,
+                      ),
                     ),
                   ),
                 ],
@@ -1004,7 +1139,10 @@ class _PurposeSection extends StatelessWidget {
                 text: 'Built With Purpose'.toUpperCase(),
                 isLocalizeText: false,
                 useAutoTranslation: false,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(color: ColorManager.primaryColor, letterSpacing: 1.2),
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: ColorManager.primaryColor,
+                  letterSpacing: 1.2,
+                ),
               ),
               const SizedBox(height: 8),
               BaseTextView(
@@ -1020,7 +1158,9 @@ class _PurposeSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
               const SizedBox(height: 8),
               BaseTextView(
@@ -1028,7 +1168,9 @@ class _PurposeSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: ColorManager.primaryColor),
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: ColorManager.primaryColor,
+                ),
               ),
               const SizedBox(height: 20),
               BaseTextView(
@@ -1036,7 +1178,9 @@ class _PurposeSection extends StatelessWidget {
                 isLocalizeText: false,
                 useAutoTranslation: false,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
               const SizedBox(height: 4),
               BaseTextView(
@@ -1071,7 +1215,9 @@ class _FinalCtaSection extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.displaySmall?.copyWith(color: ColorManager.colorWhite),
+              style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                color: ColorManager.colorWhite,
+              ),
             ),
             const SizedBox(height: 12),
             BaseTextView(
@@ -1079,7 +1225,9 @@ class _FinalCtaSection extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(220)),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: ColorManager.colorWhite.withAlpha(220),
+              ),
             ),
             const SizedBox(height: 4),
             BaseTextView(
@@ -1087,7 +1235,9 @@ class _FinalCtaSection extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: ColorManager.colorWhite),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(color: ColorManager.colorWhite),
             ),
             const SizedBox(height: 28),
             Wrap(
@@ -1146,7 +1296,9 @@ class _SectionHeading extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: ColorManager.colorTextLight,
+              ),
             ),
           ],
         ],

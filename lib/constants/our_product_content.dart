@@ -4,12 +4,14 @@ class OurProductContent {
   OurProductContent._();
 
   static const String heroEyebrow = 'Har Setu Connect';
-  static const String heroTitle = 'Connecting Temples, Devotees & Seva Through Technology';
+  static const String heroTitle =
+      'Connecting Temples, Devotees & Seva Through Technology';
   static const String heroDescription =
       'A modern, intelligent Temple Management System designed to help temples, '
       'trusts, and religious organizations manage their daily operations, connect '
       'with devotees, and deliver a seamless spiritual experience.';
-  static const String heroTagline = 'From Temple Management to Devotee Experience — One Connected Platform.';
+  static const String heroTagline =
+      'From Temple Management to Devotee Experience — One Connected Platform.';
 
   static const String whatIsTitle = 'What is Har Setu Connect?';
   static const String whatIsBody1 =
@@ -43,7 +45,8 @@ class OurProductContent {
   static const List<WhyReasonItem> whyReasons = [
     WhyReasonItem(
       title: 'Simplify Temple Operations',
-      description: 'Reduce manual work and bring everyday temple activities into one centralized platform.',
+      description:
+          'Reduce manual work and bring everyday temple activities into one centralized platform.',
     ),
     WhyReasonItem(
       title: 'Improve Devotee Experience',
@@ -53,7 +56,8 @@ class OurProductContent {
     ),
     WhyReasonItem(
       title: 'Increase Transparency',
-      description: 'Maintain organized digital records of donations, bookings, transactions, devotees, and temple activities.',
+      description:
+          'Maintain organized digital records of donations, bookings, transactions, devotees, and temple activities.',
     ),
     WhyReasonItem(
       title: 'Save Time',
@@ -69,7 +73,8 @@ class OurProductContent {
     ),
     WhyReasonItem(
       title: 'Grow Digitally',
-      description: 'Give traditional temples access to modern technology without making the experience complicated.',
+      description:
+          'Give traditional temples access to modern technology without making the experience complicated.',
     ),
   ];
 
@@ -77,87 +82,121 @@ class OurProductContent {
     FeatureItem(
       icon: 'temple',
       title: 'Temple Management',
-      description: 'Manage temple information, services, timings, facilities, and operational details from one place.',
+      description:
+          'Manage temple information, services, timings, facilities, and operational details from one place.',
     ),
     FeatureItem(
       icon: 'seva',
       title: 'Puja & Seva',
-      description: 'Create and manage different puja, seva, and religious services with configurable booking options.',
+      description:
+          'Create and manage different puja, seva, and religious services with configurable booking options.',
     ),
     FeatureItem(
       icon: 'token',
       title: 'Token & Queue Management',
-      description: 'Digitize token generation and queue management to reduce waiting times and improve crowd management.',
+      description:
+          'Digitize token generation and queue management to reduce waiting times and improve crowd management.',
     ),
     FeatureItem(
       icon: 'donation',
       title: 'Donations',
-      description: 'Create different donation types, configure donation rules, collect payments, and maintain digital donation records.',
+      description:
+          'Create different donation types, configure donation rules, collect payments, and maintain digital donation records.',
     ),
     FeatureItem(
       icon: 'receipt',
       title: 'Digital Receipts',
-      description: 'Generate and maintain digital receipts for donations, bookings, and transactions.',
+      description:
+          'Generate and maintain digital receipts for donations, bookings, and transactions.',
     ),
     FeatureItem(
       icon: 'yatra',
       title: 'Yatra & Visit Management',
-      description: 'Manage temple visits, yatras, visitor schedules, capacity, and related bookings.',
+      description:
+          'Manage temple visits, yatras, visitor schedules, capacity, and related bookings.',
     ),
     FeatureItem(
       icon: 'announcement',
       title: 'Announcements',
-      description: 'Share important temple announcements and updates directly with devotees.',
+      description:
+          'Share important temple announcements and updates directly with devotees.',
     ),
     FeatureItem(
       icon: 'notification',
       title: 'Notifications',
-      description: 'Send timely notifications about bookings, tokens, puja, events, announcements, and other important information.',
+      description:
+          'Send timely notifications about bookings, tokens, puja, events, announcements, and other important information.',
     ),
     FeatureItem(
       icon: 'reports',
       title: 'Reports & Analytics',
-      description: 'Get insights into donations, bookings, visitors, services, and temple activities.',
+      description:
+          'Get insights into donations, bookings, visitors, services, and temple activities.',
     ),
     FeatureItem(
       icon: 'devotee',
       title: 'Devotee Management',
-      description: 'Maintain organized devotee information and create a better long-term relationship between temples and their devotees.',
+      description:
+          'Maintain organized devotee information and create a better long-term relationship between temples and their devotees.',
     ),
   ];
 
   static const List<ProcessStepItem> howItWorks = [
-    ProcessStepItem(title: 'Discover', description: 'Devotees discover temples and their available services.'),
+    ProcessStepItem(
+      title: 'Discover',
+      description: 'Devotees discover temples and their available services.',
+    ),
     ProcessStepItem(
       title: 'Connect',
-      description: 'They explore temple information, puja, seva, donations, yatras, and other services.',
+      description:
+          'They explore temple information, puja, seva, donations, yatras, and other services.',
     ),
     ProcessStepItem(
       title: 'Book / Participate',
-      description: 'Devotees can book services, generate tokens, donate, or register for temple activities.',
+      description:
+          'Devotees can book services, generate tokens, donate, or register for temple activities.',
     ),
     ProcessStepItem(
       title: 'Stay Connected',
-      description: 'Receive digital receipts, notifications, announcements, booking updates, and important temple information.',
+      description:
+          'Receive digital receipts, notifications, announcements, booking updates, and important temple information.',
     ),
   ];
 
   static const List<AudienceItem> audiences = [
-    AudienceItem(title: 'For Temples', description: 'Manage daily operations and devotee services.'),
-    AudienceItem(title: 'For Religious Trusts', description: 'Manage multiple activities and maintain centralized records.'),
+    AudienceItem(
+      title: 'For Temples',
+      description: 'Manage daily operations and devotee services.',
+    ),
+    AudienceItem(
+      title: 'For Religious Trusts',
+      description:
+          'Manage multiple activities and maintain centralized records.',
+    ),
     AudienceItem(
       title: 'For Temple Administrators',
-      description: 'Simplify administration and access important information from a centralized dashboard.',
+      description:
+          'Simplify administration and access important information from a centralized dashboard.',
     ),
-    AudienceItem(title: 'For Devotees', description: 'Experience a convenient and connected way to interact with temples.'),
+    AudienceItem(
+      title: 'For Devotees',
+      description:
+          'Experience a convenient and connected way to interact with temples.',
+    ),
   ];
 
-  static const List<String> ecosystemFlow = ['Devotee App', 'Har Setu Platform', 'Temple Admin', 'Trust Management'];
+  static const List<String> ecosystemFlow = [
+    'Devotee App',
+    'Har Setu Platform',
+    'Temple Admin',
+    'Trust Management',
+  ];
   static const String ecosystemDescription =
       'Har Setu Connect creates a bridge between devotees and temple administration, allowing '
       'information and services to flow seamlessly between both sides.';
 
-  static const String technologyEyebrow = 'Modern Technology. Meaningful Purpose.';
+  static const String technologyEyebrow =
+      'Modern Technology. Meaningful Purpose.';
   static const String technologyDescription =
       'Har Setu Connect is built with a scalable technology architecture designed to support '
       'modern web and mobile experiences.';
@@ -175,7 +214,8 @@ class OurProductContent {
   ];
 
   static const String visionTitle = 'Making Every Temple Digitally Connected.';
-  static const String visionBody1 = 'We believe technology should not replace tradition.';
+  static const String visionBody1 =
+      'We believe technology should not replace tradition.';
   static const String visionBody2 = 'It should strengthen it.';
   static const String visionBody3 =
       'Har Setu Connect aims to help temples preserve their traditional values while embracing '
@@ -199,14 +239,19 @@ class OurProductContent {
   ];
 
   static const String purposeTitle = 'Technology That Serves Faith.';
-  static const String purposeBody1 = 'Har Setu is building technology with a simple purpose:';
+  static const String purposeBody1 =
+      'Har Setu is building technology with a simple purpose:';
   static const String purposeBody2 =
       'To make spiritual journeys more accessible, organized, transparent, and connected.';
-  static const String purposeBody3 = 'Har Setu Connect is not just a software platform.';
-  static const String purposeBody4 = 'It is a digital bridge between temples and devotees.';
+  static const String purposeBody3 =
+      'Har Setu Connect is not just a software platform.';
+  static const String purposeBody4 =
+      'It is a digital bridge between temples and devotees.';
 
-  static const String finalCtaTitle = 'Ready to Digitally Transform Your Temple?';
-  static const String finalCtaBody = 'Bring your temple, trust, and devotees onto one connected platform.';
+  static const String finalCtaTitle =
+      'Ready to Digitally Transform Your Temple?';
+  static const String finalCtaBody =
+      'Bring your temple, trust, and devotees onto one connected platform.';
   static const String finalCtaTagline = 'Experience Har Setu Connect.';
 }
 
@@ -222,7 +267,11 @@ class FeatureItem {
   final String title;
   final String description;
 
-  const FeatureItem({required this.icon, required this.title, required this.description});
+  const FeatureItem({
+    required this.icon,
+    required this.title,
+    required this.description,
+  });
 }
 
 class ProcessStepItem {

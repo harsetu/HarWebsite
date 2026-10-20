@@ -31,15 +31,27 @@ class SiteHeader extends StatelessWidget implements PreferredSizeWidget {
                   onTap: () => context.go(AppRoute.home),
                   child: Row(
                     children: [
-                      Image.asset('assets/images/logo.png', height: 100, fit: BoxFit.contain),
+                      Image.asset(
+                        'assets/images/logo.png',
+                        height: 100,
+                        fit: BoxFit.contain,
+                      ),
                     ],
                   ),
                 ),
                 const Spacer(),
                 if (!isCompact) ...[
-                  _NavLink(label: 'Home', route: AppRoute.home, isActive: currentPath == AppRoute.home),
+                  _NavLink(
+                    label: 'Home',
+                    route: AppRoute.home,
+                    isActive: currentPath == AppRoute.home,
+                  ),
                   const SizedBox(width: 28),
-                  _NavLink(label: 'Our Product', route: AppRoute.ourProduct, isActive: currentPath == AppRoute.ourProduct),
+                  _NavLink(
+                    label: 'Our Product',
+                    route: AppRoute.ourProduct,
+                    isActive: currentPath == AppRoute.ourProduct,
+                  ),
                   const SizedBox(width: 28),
                 ],
                 BaseButton(
@@ -66,7 +78,11 @@ class _NavLink extends StatelessWidget {
   final String route;
   final bool isActive;
 
-  const _NavLink({required this.label, required this.route, required this.isActive});
+  const _NavLink({
+    required this.label,
+    required this.route,
+    required this.isActive,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +93,9 @@ class _NavLink extends StatelessWidget {
         isLocalizeText: false,
         useAutoTranslation: false,
         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: isActive ? ColorManager.primaryColor : ColorManager.textColor,
-              fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
-            ),
+          color: isActive ? ColorManager.primaryColor : ColorManager.textColor,
+          fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+        ),
       ),
     );
   }

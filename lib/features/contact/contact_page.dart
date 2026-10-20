@@ -40,10 +40,13 @@ class ContactPage extends BaseStatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 BaseTextView(
-                  text: 'Have a project or an enquiry? Send us a message and we\'ll get back to you.',
+                  text:
+                      'Have a project or an enquiry? Send us a message and we\'ll get back to you.',
                   isLocalizeText: false,
                   useAutoTranslation: false,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: ColorManager.colorTextLight,
+                  ),
                 ),
                 const SizedBox(height: 36),
                 if (isCompact) ...[
@@ -96,13 +99,20 @@ class _ContactInfoCard extends StatelessWidget {
           _ContactInfoRow(
             icon: Icons.call_outlined,
             text: SiteContent.contactPhone,
-            onTap: () => launchUrl(Uri(scheme: 'tel', path: SiteContent.contactPhone.replaceAll(' ', ''))),
+            onTap: () => launchUrl(
+              Uri(
+                scheme: 'tel',
+                path: SiteContent.contactPhone.replaceAll(' ', ''),
+              ),
+            ),
           ),
           const SizedBox(height: 18),
           _ContactInfoRow(
             icon: Icons.email_outlined,
             text: SiteContent.contactEmail,
-            onTap: () => launchUrl(Uri(scheme: 'mailto', path: SiteContent.contactEmail)),
+            onTap: () => launchUrl(
+              Uri(scheme: 'mailto', path: SiteContent.contactEmail),
+            ),
           ),
           const SizedBox(height: 28),
           BaseTextView(
@@ -114,11 +124,20 @@ class _ContactInfoCard extends StatelessWidget {
           const SizedBox(height: 14),
           Row(
             children: [
-              _SocialIconButton(assetPath: 'assets/images/icon_instagram.svg', url: SiteContent.instagramUrl),
+              _SocialIconButton(
+                assetPath: 'assets/images/icon_instagram.svg',
+                url: SiteContent.instagramUrl,
+              ),
               const SizedBox(width: 12),
-              _SocialIconButton(assetPath: 'assets/images/icon_facebook.svg', url: SiteContent.facebookUrl),
+              _SocialIconButton(
+                assetPath: 'assets/images/icon_facebook.svg',
+                url: SiteContent.facebookUrl,
+              ),
               const SizedBox(width: 12),
-              _SocialIconButton(assetPath: 'assets/images/icon_linkedin.svg', url: SiteContent.linkedinUrl),
+              _SocialIconButton(
+                assetPath: 'assets/images/icon_linkedin.svg',
+                url: SiteContent.linkedinUrl,
+              ),
             ],
           ),
         ],
@@ -132,7 +151,11 @@ class _ContactInfoRow extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
 
-  const _ContactInfoRow({required this.icon, required this.text, required this.onTap});
+  const _ContactInfoRow({
+    required this.icon,
+    required this.text,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +194,8 @@ class _SocialIconButton extends StatelessWidget {
 
   const _SocialIconButton({required this.assetPath, required this.url});
 
-  Future<void> _open() => launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+  Future<void> _open() =>
+      launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
 
   @override
   Widget build(BuildContext context) {
@@ -218,14 +242,14 @@ class _EnquiryFormState extends State<_EnquiryForm> {
   void _submit(BuildContext context) {
     if (!_formKey.currentState!.validate()) return;
     context.read<ContactCubit>().submitEnquiry(
-          endpoint: SiteContent.contactFormEndpoint,
-          toEmail: SiteContent.contactEmail,
-          subject: 'New Enquiry from ${SiteContent.companyName} Website',
-          name: _nameController.text.trim(),
-          email: _emailController.text.trim(),
-          phone: _phoneController.text.trim(),
-          message: _messageController.text.trim(),
-        );
+      endpoint: SiteContent.contactFormEndpoint,
+      toEmail: SiteContent.contactEmail,
+      subject: 'New Enquiry from ${SiteContent.companyName} Website',
+      name: _nameController.text.trim(),
+      email: _emailController.text.trim(),
+      phone: _phoneController.text.trim(),
+      message: _messageController.text.trim(),
+    );
   }
 
   @override
@@ -234,7 +258,11 @@ class _EnquiryFormState extends State<_EnquiryForm> {
       listener: (context, state) {
         if (state is ContactSuccess) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Thanks! Your enquiry has been sent — we\'ll get back to you soon.')),
+            const SnackBar(
+              content: Text(
+                'Thanks! Your enquiry has been sent — we\'ll get back to you soon.',
+              ),
+            ),
           );
           _formKey.currentState?.reset();
           _nameController.clear();
@@ -243,9 +271,9 @@ class _EnquiryFormState extends State<_EnquiryForm> {
           _messageController.clear();
           context.read<ContactCubit>().reset();
         } else if (state is ContactFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.message)),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(state.message)));
         }
       },
       builder: (context, state) {
@@ -270,7 +298,9 @@ class _EnquiryFormState extends State<_EnquiryForm> {
                 allowedInput: AllowedInput.email,
                 minLength: 5,
                 validator: (value) {
-                  if (value == null || !value.contains('@') || !value.contains('.')) {
+                  if (value == null ||
+                      !value.contains('@') ||
+                      !value.contains('.')) {
                     return 'Enter a valid email address';
                   }
                   return null;

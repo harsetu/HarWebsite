@@ -47,7 +47,9 @@ class LegalPageLayout extends StatelessWidget {
                 text: 'Last updated: $lastUpdated',
                 isLocalizeText: false,
                 useAutoTranslation: false,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
               const SizedBox(height: 36),
               for (final section in sections) ...[
@@ -62,7 +64,10 @@ class LegalPageLayout extends StatelessWidget {
                   text: section.body,
                   isLocalizeText: false,
                   useAutoTranslation: false,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight, height: 1.6),
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: ColorManager.colorTextLight,
+                    height: 1.6,
+                  ),
                 ),
                 const SizedBox(height: 28),
               ],

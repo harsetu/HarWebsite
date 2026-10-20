@@ -4,7 +4,8 @@ class InternshipContent {
   InternshipContent._();
 
   static const String title = 'Flutter Development Internship';
-  static const String tagline = 'Learn Flutter from scratch, then build a real app with our team.';
+  static const String tagline =
+      'Learn Flutter from scratch, then build a real app with our team.';
   static const String overview =
       'An internship built in two parts: an 8-week, weekend-class Flutter '
       'course to take you from zero to job-ready, followed by 3/6 months '

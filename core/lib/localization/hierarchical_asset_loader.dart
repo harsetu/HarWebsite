@@ -9,10 +9,29 @@ import 'package:flutter/services.dart';
 class HierarchicalAssetLoader extends AssetLoader {
   const HierarchicalAssetLoader();
 
+  static const _supportedFiles = {'en_US.json', 'hi_IN.json', 'pa_IN.json'};
+
+  static String _defaultCountryFor(String languageCode) {
+    switch (languageCode) {
+      case 'hi':
+      case 'pa':
+        return 'IN';
+      default:
+        return 'US';
+    }
+  }
+
   @override
   Future<Map<String, dynamic>?> load(String path, Locale locale) async {
     // Convert locale to the correct file naming format (e.g., en_US.json)
-    final fileName = '${locale.languageCode}_${locale.countryCode}.json';
+    // A locale can arrive without a country (e.g. a saved or browser-derived
+    // `hi`), which would otherwise yield `hi_null.json` — resolve it to the
+    // supported locale for that language, falling back to English.
+    final countryCode = (locale.countryCode == null || locale.countryCode!.isEmpty)
+        ? _defaultCountryFor(locale.languageCode)
+        : locale.countryCode;
+    var fileName = '${locale.languageCode}_$countryCode.json';
+    if (!_supportedFiles.contains(fileName)) fileName = 'en_US.json';
 
     // Load package-level translations first (these are the main translations)
     Map<String, dynamic> packageTranslations = {};

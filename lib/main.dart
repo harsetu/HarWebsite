@@ -26,7 +26,9 @@ Future<void> main() async {
   // startup doesn't crash from an UnsupportedError.
   if (!kIsWeb) {
     try {
-      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
     } catch (_) {
       // Analytics/crashlytics are best-effort; the site must still load without them.
     }

@@ -3,8 +3,10 @@ class SiteContent {
   SiteContent._();
 
   static const String companyName = 'HarSetu Tech';
-  static const String tagline = 'Building digital bridges for growing businesses';
-  static const String heroTagline = 'Focus on Your Idea. For the Tech, We\'re Here.';
+  static const String tagline =
+      'Building digital bridges for growing businesses';
+  static const String heroTagline =
+      'Focus on Your Idea. For the Tech, We\'re Here.';
   static const String heroDescription =
       'HarSetu Tech is a startup software studio building app development, '
       'web development and digital SEO solutions for businesses — and the '
@@ -15,8 +17,10 @@ class SiteContent {
   static const String contactPhone = '+91 9053230525';
 
   static const String instagramUrl = 'https://www.instagram.com/har.setu51/';
-  static const String facebookUrl = 'https://www.facebook.com/profile.php?id=61591480475028';
-  static const String linkedinUrl = 'https://www.linkedin.com/in/har-setu-35135742a/';
+  static const String facebookUrl =
+      'https://www.facebook.com/profile.php?id=61591480475028';
+  static const String linkedinUrl =
+      'https://www.linkedin.com/in/har-setu-35135742a/';
 
   /// Web app URL from the Google Apps Script deployment (see
   /// google_apps_script/Code.gs) that saves enquiries to a Google Sheet and
@@ -121,15 +125,18 @@ class SiteContent {
   static const List<ProcessStep> process = [
     ProcessStep(
       title: 'Discover',
-      description: 'We understand your goals, users, and constraints before writing a line of code.',
+      description:
+          'We understand your goals, users, and constraints before writing a line of code.',
     ),
     ProcessStep(
       title: 'Design',
-      description: 'Wireframes and UI/UX designs that make the solution intuitive and on-brand.',
+      description:
+          'Wireframes and UI/UX designs that make the solution intuitive and on-brand.',
     ),
     ProcessStep(
       title: 'Build',
-      description: 'Agile development with regular check-ins, so you always know where things stand.',
+      description:
+          'Agile development with regular check-ins, so you always know where things stand.',
     ),
     ProcessStep(
       title: 'Launch',
@@ -137,7 +144,8 @@ class SiteContent {
     ),
     ProcessStep(
       title: 'Support',
-      description: 'Ongoing maintenance, monitoring, and improvements after launch.',
+      description:
+          'Ongoing maintenance, monitoring, and improvements after launch.',
     ),
   ];
 
@@ -168,7 +176,8 @@ class SiteContent {
     ),
     FaqItem(
       question: 'Do you provide support after launch?',
-      answer: 'Yes — we offer post-launch maintenance and support packages to keep your product running smoothly.',
+      answer:
+          'Yes — we offer post-launch maintenance and support packages to keep your product running smoothly.',
     ),
   ];
 }
@@ -201,18 +210,12 @@ class ProcessStep {
   final String title;
   final String description;
 
-  const ProcessStep({
-    required this.title,
-    required this.description,
-  });
+  const ProcessStep({required this.title, required this.description});
 }
 
 class FaqItem {
   final String question;
   final String answer;
 
-  const FaqItem({
-    required this.question,
-    required this.answer,
-  });
+  const FaqItem({required this.question, required this.answer});
 }

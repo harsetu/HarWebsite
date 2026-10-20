@@ -51,9 +51,9 @@ class _InternshipHero extends StatelessWidget {
               useAutoTranslation: false,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    fontSize: isCompact ? 28 : 36,
-                    color: ColorManager.colorWhite,
-                  ),
+                fontSize: isCompact ? 28 : 36,
+                color: ColorManager.colorWhite,
+              ),
             ),
             const SizedBox(height: 16),
             BaseTextView(
@@ -61,7 +61,9 @@ class _InternshipHero extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(210)),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: ColorManager.colorWhite.withAlpha(210),
+              ),
             ),
             const SizedBox(height: 20),
             BaseTextView(
@@ -69,7 +71,9 @@ class _InternshipHero extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorWhite.withAlpha(180)),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: ColorManager.colorWhite.withAlpha(180),
+              ),
             ),
             const SizedBox(height: 28),
             BaseButton(
@@ -112,13 +116,7 @@ class _PhasesSection extends StatelessWidget {
         // horizontal (desktop) case here; see _MissionVisionSection in
         // home_page.dart for the full explanation.
         child: isCompact
-            ? Column(
-                children: [
-                  phase1,
-                  const SizedBox(height: 24),
-                  phase2,
-                ],
-              )
+            ? Column(children: [phase1, const SizedBox(height: 24), phase2])
             : Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -158,7 +156,11 @@ class _PhaseCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             border: Border.all(color: ColorManager.dividerColour),
             boxShadow: [
-              BoxShadow(color: ColorManager.colorBlack.withAlpha(10), blurRadius: 16, offset: const Offset(0, 6)),
+              BoxShadow(
+                color: ColorManager.colorBlack.withAlpha(10),
+                blurRadius: 16,
+                offset: const Offset(0, 6),
+              ),
             ],
           ),
           child: Column(
@@ -175,11 +177,18 @@ class _PhaseCard extends StatelessWidget {
                       color: ColorManager.primaryColor.withAlpha(30),
                       borderRadius: BorderRadius.circular(14),
                     ),
-                    child: Icon(icon, color: ColorManager.primaryColor, size: 26),
+                    child: Icon(
+                      icon,
+                      color: ColorManager.primaryColor,
+                      size: 26,
+                    ),
                   ),
                   const SizedBox(width: 14),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: ColorManager.primaryColor.withAlpha(20),
                       borderRadius: BorderRadius.circular(20),
@@ -188,7 +197,9 @@ class _PhaseCard extends StatelessWidget {
                       text: '$badge · $duration',
                       isLocalizeText: false,
                       useAutoTranslation: false,
-                      style: Theme.of(context).textTheme.labelMedium?.copyWith(color: ColorManager.primaryColor),
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        color: ColorManager.primaryColor,
+                      ),
                     ),
                   ),
                 ],
@@ -205,7 +216,9 @@ class _PhaseCard extends StatelessWidget {
                 text: description,
                 isLocalizeText: false,
                 useAutoTranslation: false,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: ColorManager.colorTextLight,
+                ),
               ),
             ],
           ),
@@ -229,7 +242,11 @@ class _ClassFormatSection extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(Icons.event_available_outlined, color: ColorManager.primaryColor, size: 32),
+              Icon(
+                Icons.event_available_outlined,
+                color: ColorManager.primaryColor,
+                size: 32,
+              ),
               const SizedBox(width: 16),
               Expanded(
                 child: Column(
@@ -246,7 +263,9 @@ class _ClassFormatSection extends StatelessWidget {
                       text: InternshipContent.classFormatDescription,
                       isLocalizeText: false,
                       useAutoTranslation: false,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorTextLight),
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: ColorManager.colorTextLight,
+                      ),
                     ),
                   ],
                 ),
@@ -324,7 +343,9 @@ class _WeekTile extends StatelessWidget {
               text: '${week.week}',
               isLocalizeText: false,
               useAutoTranslation: false,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(color: ColorManager.colorWhite),
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge?.copyWith(color: ColorManager.colorWhite),
             ),
           ),
           const SizedBox(width: 16),
@@ -350,7 +371,10 @@ class _WeekTile extends StatelessWidget {
                           child: Container(
                             width: 5,
                             height: 5,
-                            decoration: BoxDecoration(color: ColorManager.primaryColor, shape: BoxShape.circle),
+                            decoration: BoxDecoration(
+                              color: ColorManager.primaryColor,
+                              shape: BoxShape.circle,
+                            ),
                           ),
                         ),
                         const SizedBox(width: 10),
@@ -359,7 +383,8 @@ class _WeekTile extends StatelessWidget {
                             text: topic,
                             isLocalizeText: false,
                             useAutoTranslation: false,
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: ColorManager.colorTextLight),
+                            style: Theme.of(context).textTheme.bodyMedium
+                                ?.copyWith(color: ColorManager.colorTextLight),
                           ),
                         ),
                       ],
@@ -391,15 +416,20 @@ class _ApplyCtaSection extends StatelessWidget {
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.displaySmall?.copyWith(color: ColorManager.colorWhite),
+              style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                color: ColorManager.colorWhite,
+              ),
             ),
             const SizedBox(height: 12),
             BaseTextView(
-              text: 'Send us an enquiry and we\'ll get back to you with the next batch details.',
+              text:
+                  'Send us an enquiry and we\'ll get back to you with the next batch details.',
               isLocalizeText: false,
               useAutoTranslation: false,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: ColorManager.colorWhite.withAlpha(220)),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: ColorManager.colorWhite.withAlpha(220),
+              ),
             ),
             const SizedBox(height: 24),
             BaseButton(
